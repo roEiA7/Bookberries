@@ -1,0 +1,4 @@
+<my-books-input class="input" (onInput)="onInput($event)"></my-books-input>
+<my-books-list class="list" [booksList]="booksList$ | async" [pageIndex]="page$ | async"
+    (pageEvent)="onPageEvent($event)" (addToWishlist)="addToWishlist($event)"
+    (removeFromWishlist)="removeFromWishlist($event)"></my-books-list>

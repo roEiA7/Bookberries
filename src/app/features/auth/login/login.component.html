@@ -1,0 +1,7 @@
+<form class="login-form">
+    <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput [formControl]="username">
+    </mat-form-field>
+    <button type="button" mat-raised-button [disabled]="username.invalid" (click)="login()">Login</button>
+</form>

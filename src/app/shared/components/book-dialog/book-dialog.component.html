@@ -1,0 +1,3 @@
+<my-book-details [book]="book$ | async" (addToWishlist)="addToWishlist.emit($event)"
+    (removeFromWishlist)="removeFromWishlist.emit($event)">
+</my-book-details>

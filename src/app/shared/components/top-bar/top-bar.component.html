@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button routerLink="/library">
+        <mat-icon>book</mat-icon>
+    </button>
+    <span>BookBerries</span>
+
+    <ng-container *ngIf="user$ | async as user">
+        <span class="spacer"></span>
+
+        <button mat-icon-button routerLink="/library" routerLinkActive="active-link" #libRla="routerLinkActive"
+            [color]="libRla.isActive ? 'accent' : 'basic'">
+            <mat-icon>youtube_searched_for</mat-icon>
+        </button>
+        <button mat-icon-button routerLink="/wishlist" routerLinkActive="active-link" #wisRla="routerLinkActive"
+            [color]="wisRla.isActive ? 'accent' : 'basic'">
+            <mat-icon>favorite_border</mat-icon>
+        </button>
+        <span class="greeting"> {{user}}</span>
+    </ng-container>
+
+</mat-toolbar>

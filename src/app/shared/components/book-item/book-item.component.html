@@ -1,0 +1,17 @@
+<ng-container *ngIf="book">
+    <div class="container button-behavior" *ngIf="book.volumeInfo as info" matRipple (click)="showBookDetails()">
+        <img class="thumnail" [src]="info.imageLinks?.thumbnail || '../../../assets/images/no-image.png'"
+            alt="Book Thumbnail">
+        <div class="title-container">
+            <span class="title">{{info.title}}</span>
+            <span class="subtitle">{{info.subtitle}}</span>
+        </div>
+
+        <ng-container *ngIf="interactable">
+            <button *ngIf="book.existInWishlist$ | async" mat-icon-button color="warn"
+                (click)="emitRemove(book.id); $event.stopPropagation()">
+                <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+        </ng-container>
+    </div>
+</ng-container>

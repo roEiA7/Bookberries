@@ -1,0 +1,25 @@
+<ng-container *ngIf="book">
+    <ng-container *ngIf="book.volumeInfo as volumeInfo">
+        <mat-card class="book-card">
+            <mat-card-header>
+                <mat-card-title>{{volumeInfo.title}}</mat-card-title>
+                <mat-card-subtitle>{{volumeInfo.subtitle}}</mat-card-subtitle>
+                <mat-card-subtitle *ngIf="volumeInfo.authors as authors">
+                    By {{authors | join:3}}
+                </mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image [src]="volumeInfo.imageLinks?.thumbnail || '../../../../assets/images/no-image.png'"
+                alt="Book's cover">
+            <mat-card-content>
+                <p>{{book.volumeInfo.description}}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <button *ngIf="book.existInWishlist$ | async; else remove_btn" mat-button color="primary"
+                    (click)="removeFromWishlist.emit(book.id)">Remove from Wishlist</button>
+                <ng-template #remove_btn>
+                    <button mat-button color="primary" (click)="addToWishlist.emit(book)">Wishlist</button>
+                </ng-template>
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</ng-container>

@@ -1,0 +1,23 @@
+:host{
+    height: calc(100% - 64px);
+    display: grid; place-items: center;
+
+    .login-form{
+        display: flex; flex-direction: column;
+        // font-size: 28rem;
+
+        ::ng-deep.mat-form-field-label-wrapper{
+            text-align: center;
+        }
+
+        .mat-form-field{
+            padding: 5rem;
+        }
+    }
+}
+
+@media (max-width: 599px){
+    :host{
+        height: calc(100% - 56px);
+    }
+}

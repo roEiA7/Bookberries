@@ -1,0 +1,8 @@
+<ng-container *ngIf="booksList$ | async as booksList">
+    <my-books-list *ngIf="booksList.totalItems>0; else empty" class="list" [booksList]="booksList" [interactable]="true"
+        [pageIndex]="page$ | async" (pageEvent)="onPageEvent($event)" (addToWishlist)="addToWishlist($event)"
+        (removeFromWishlist)="removeFromWishlist($event)"></my-books-list>
+    <ng-template #empty>
+        <h1 style="text-align: center;">You should add some books to your wishlist.</h1>
+    </ng-template>
+</ng-container>

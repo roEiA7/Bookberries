@@ -1,0 +1,57 @@
+// :host{
+//     height: 95%; width: 95%;
+//     display: flex;
+
+//     .book-card{
+//         height: 100%; width: 100%;
+
+//         .mat-card-header{
+//             height: 25%;
+//         }
+//     }
+// }
+
+// .container{
+//     display: flex; flex-direction: column;
+//     background: lightblue;
+
+//     .img-alt{
+//         text-align: center;
+//     }
+// }
+:host{
+    height: 100%; width: 100%;
+    .container{
+        height: 100%; width: 100%; 
+        display: flex; flex-direction: column; 
+        
+        .thumnail{
+            flex: 7; 
+            border-top-right-radius: 10rem; border-top-left-radius: 10rem;
+            border-bottom: 2px solid #bbb;
+        }
+
+        .title-container{
+            
+            display: flex; flex-direction: column; flex: 1;
+            padding: 20rem 5rem; text-align: center; 
+
+            .title{
+                font-size: 14rem; font-weight: bold;
+            }
+    
+            .subtitle{
+                font-size: 11rem; font-weight: lighter; margin-top: 5rem;
+            }  
+
+            .title, .subtitle{
+                white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+            } 
+        }
+
+        .mat-icon-button{
+            position: absolute; top: 2%; right: 2%;
+        }   
+    }
+}
+

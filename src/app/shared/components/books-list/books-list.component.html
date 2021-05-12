@@ -1,0 +1,11 @@
+<div class="list-container" *ngIf="booksList">
+    <mat-grid-list [cols]="breakpoint" rowHeight="1:2" gutterSize="50rem">
+        <mat-grid-tile *ngFor="let book of booksList.items">
+            <my-book-item [book]="book" [interactable]="interactable" (addToWishlist)="addToWishlist.emit($event)"
+                (removeFromWishlist)="removeFromWishlist.emit($event)">
+            </my-book-item>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-paginator [pageIndex]="pageIndex" [length]="booksList.totalItems" pageSize="20" [hidePageSize]="true"
+        (page)="pageEvent.emit($event.pageIndex)"> </mat-paginator>
+</div>

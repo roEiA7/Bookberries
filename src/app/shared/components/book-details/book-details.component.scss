@@ -1,0 +1,17 @@
+.book-card {
+    .mat-card-header{
+        max-height: 250px; overflow: auto;
+    }
+    .mat-card-image{
+        height: 300px; 
+    }
+
+    .mat-card-content{
+        max-height: 200px; overflow: auto;
+    }
+
+    .mat-card-actions{
+        display: flex; justify-content: space-around;
+    }
+  }
+

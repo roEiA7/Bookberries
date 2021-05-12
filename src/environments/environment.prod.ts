@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  booksApiUrl: 'https://www.googleapis.com/books/v1/'
 };

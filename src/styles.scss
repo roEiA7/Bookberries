@@ -1,1 +1,15 @@
-/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; font-size: 6.25%; }
+body { margin: 0;  font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.button-behavior{
+    cursor: pointer; transition: ease 0.4s;
+    &:hover{
+        opacity: 0.6;
+    }
+}
+
+@media (max-width:481px){
+    html{
+        font-size: 5%;
+    }
+}
